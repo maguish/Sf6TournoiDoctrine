@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des événements et des tournois</h1>
+    <ul>
+        {% for i in evt %}
+            <li><h2>{{ i.nom }}</h2></li>
+            <ul>
+                {% for j in tr %}
+                    {% if j.ev == i %}
+                        <li><h5>{{ j.nom }} --> ( {{j.description}} )</h5></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock %}
